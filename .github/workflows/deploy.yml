@@ -68,7 +68,7 @@ jobs:
 
       - name: Build Jekyll
         working-directory: blog-src
-        run: bundle exec jekyll build --destination ../dist/blog
+        run: bundle exec jekyll build --destination ../site/.vitepress/dist/blog
         
   # Deployment job
   deploy:
