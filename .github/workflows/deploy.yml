@@ -51,7 +51,25 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: site/.vitepress/dist
+      - name: Checkout Blog
+        uses: actions/checkout@v4
+        with:
+          repository: whispard/personal-blog
+          path: blog-src
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with :
+          ruby-version: 3.1
+      - name: Install Jekyll
+        working-directory: blog-src
+        run: |
+          gem install bundler
+          bundle install
 
+      - name: Build Jekyll
+        working-directory: blog-src
+        run: bundle exec jekyll build --destination ../dist/blog
+        
   # Deployment job
   deploy:
     environment:
