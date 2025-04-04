@@ -8,9 +8,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Blog', link: '/blog' },
+      { text: 'Blog', link: 'https://whispard.github.io/blog/' },
       { text: 'Projects', link: '/projects' },
-      // { text: 'Links', link: '/links' },
+      // { text: 'Links', link: '/links' }
       { text: 'About', link: '/about' },
     ],
 
